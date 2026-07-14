@@ -4,3 +4,4 @@
 3. Arrays & Binary Search
 4. Start Python
 5. classes,objects,encapsulation,constructors,destructors,OOPS 
+6. static,private construcutors,destructors

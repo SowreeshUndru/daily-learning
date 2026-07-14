@@ -6,16 +6,19 @@ Understanding the execution order of SQL is the key to writing correct queries.
 
 ## SQL Execution Order
 
-```text
+``` 
 FROM
 JOIN
 ON
 WHERE
 GROUP BY
+Aggregate Functions (COUNT, SUM, AVG, MIN, MAX, ...)
 HAVING
+WINDOW FUNCTIONS (OVER, ROW_NUMBER, RANK, LAG, LEAD, ...)
 SELECT
+DISTINCT
 ORDER BY
-LIMIT
+LIMIT / OFFSET
 ```
 
 ---
