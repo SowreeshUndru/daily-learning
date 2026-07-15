@@ -5,3 +5,7 @@
 4. Start Python
 5. classes,objects,encapsulation,constructors,destructors,OOPS 
 6. static,private construcutors,destructors
+7. Know
+    Recursive CTE
+    Multiple CTEs
+    Reusing CTE
