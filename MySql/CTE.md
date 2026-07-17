@@ -92,3 +92,33 @@ Use a CTE when:
 - You want to avoid writing deeply nested subqueries.
 - You need to reuse the same intermediate result multiple times within a single SQL statement.
 - You want to break a large query into smaller, more understandable parts.
+
+
+
+## Using mutliple Quries and dependent  Quries
+
+```sql
+WITH First_CTE AS (
+    SELECT id, customer_id, total_amount 
+    FROM Orders
+),
+Second_CTE AS (
+    -- Queries First_CTE
+    SELECT customer_id, SUM(total_amount) AS customer_total
+    FROM First_CTE 
+    GROUP BY customer_id
+),
+Third_CTE AS (
+    -- Queries Second_CTE
+    SELECT customer_id, customer_total
+    FROM Second_CTE
+    WHERE customer_total > 1000
+)
+
+-- Main query using the final CTE (or any of the previous ones!)
+SELECT t.customer_id, t.customer_total, c.customer_name
+FROM Third_CTE t
+JOIN Customers c 
+  ON t.customer_id = c.id;
+
+```

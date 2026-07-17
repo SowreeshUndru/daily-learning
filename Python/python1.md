@@ -233,3 +233,22 @@ y ─────►|     3     |
 
 - First two IDs are the same because `x` and `y` refer to the same object (`2`).
 - After `y = 3`, `y` refers to a different object, so its ID changes while `x`'s ID remains the same.
+
+1. ![alt text](image.png)
+2. ![alt text](image-1.png)
+
+# How `and` Works
+
+**Rule:**
+
+- Return the **first falsy operand**.
+- If **every operand is truthy**, return the **last operand**.
+
+---
+
+# How `or` Works
+
+**Rule:**
+
+- Return the **first truthy operand**.
+- If **none are truthy**, return the **last operand**.

@@ -1,7 +1,3 @@
-x=2
-y=x
-print(id(x))
-print(id(y))
-y=3
-print(id(x))
-print(id(y))
+a=20
+b=10
+print(a and b)
