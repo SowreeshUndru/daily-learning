@@ -252,3 +252,7 @@ y ─────►|     3     |
 
 - Return the **first truthy operand**.
 - If **none are truthy**, return the **last operand**.
+
+![alt text](image-2.png)
+1. In minus indexing the values are like to be -5 , -4 ,-3 , -2 , -1 . here slicing is different like **"(]"**
+3. Where as in normal indexing  the group looks like  this **"[)"**
