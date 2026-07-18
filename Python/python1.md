@@ -1,4 +1,27 @@
 # Python Variables and `id()` Function
+**Note:**
+## Integers,Strings,Tuples are immutable
+## List are mutable 
+## t1=t1+t2 always creates a new list object ................
+
+
+## **NOTE**
+1. Most people are taught that x += y is just a shortcut for x = x + y. But in Python, that is a lie. They actually trigger two completely different behaviors under the hood when you are working with lists.
+
+2. Here is the secret: += is specifically programmed to look at the object it's working with and ask, "Are you mutable?"
+
+## How Python treats + vs +=
+4. The + Operator (Strict Math)
+When Python sees lt = lt + lt, the + operator has one strict rule: Never touch the originals. It creates a brand new list, copies the data over, and then the = sign moves the sticky note to the new list.
+
+5. The += Operator (In-Place Addition)
+The += operator is smarter. It is literally called "in-place addition."
+When you use += on an immutable object (like a tuple or integer), Python realizes it can't modify it in-place, so it falls back to creating a new object.
+
+But when you use += on a mutable object (like a list), Python says: "Great! I don't need to waste memory creating a new object. I will just reach into the existing list and shove the new data into it."
+
+For lists, += acts exactly like the .extend() method!
+
 
 ## Code
 
