@@ -256,3 +256,165 @@ y ─────►|     3     |
 ![alt text](image-2.png)
 1. In minus indexing the values are like to be -5 , -4 ,-3 , -2 , -1 . here slicing is different like **"(]"**
 3. Where as in normal indexing  the group looks like  this **"[)"**
+
+**NOTE** :![alt text](image-6.png)
+
+# 4. Assignment vs Copy in Python Lists
+
+## Assignment (`=`)
+
+When we assign one list to another using the assignment operator (`=`), **Python does not create a new list**.
+
+Instead, **both variables point to the same list object** in memory.
+
+### Example
+
+```python
+list1 = [10, 20, 30]
+list2 = list1
+
+print(list1)
+print(list2)
+```
+
+### Memory Diagram
+
+```
+list1
+   \
+    \
+     -----> +----------------+
+list2        | 10 | 20 | 30 |
+             +----------------+
+```
+
+Both `list1` and `list2` point to the **same list object**.
+
+---
+
+## Modifying the List
+
+If we modify the list using methods like:
+
+- `append()`
+- `pop()`
+- `remove()`
+- `insert()`
+- `clear()`
+- `sort()`
+- `reverse()`
+
+the **same list object** is modified.
+
+### Example
+
+```python
+list1 = [10, 20, 30]
+list2 = list1
+
+list1.append(40)
+
+print(list1)
+print(list2)
+```
+
+### Output
+
+```
+[10, 20, 30, 40]
+[10, 20, 30, 40]
+```
+
+### Memory Diagram
+
+```
+list1
+   \
+    \
+     -----> +--------------------+
+list2        |10|20|30|40|
+             +--------------------+
+```
+
+Since both variables refer to the same object, both show the change.
+
+---
+
+## Creating an Independent Copy
+
+If you want two different lists, you **must create a copy**.
+
+The easiest way is:
+
+```python
+list2 = list1.copy()
+```
+
+or
+
+```python
+list2 = list(list1)
+```
+
+or
+
+```python
+list2 = list1[:]
+```
+
+### Example
+
+```python
+list1 = [10, 20, 30]
+list2 = list1.copy()
+
+list1.append(40)
+
+print(list1)
+print(list2)
+```
+
+### Output
+
+```
+[10, 20, 30, 40]
+[10, 20, 30]
+```
+
+### Memory Diagram
+
+```
+list1 ----------> +--------------------+
+                  |10|20|30|40|
+                  +--------------------+
+
+list2 ----------> +---------------+
+                  |10|20|30|
+                  +---------------+
+```
+
+Now the two variables point to **different list objects**, so changing one does not affect the other.
+
+---
+
+## Important Note
+
+You **do not always need to use `copy()`**.
+
+Use `copy()` **only when you want an independent list**.
+
+If you intentionally want two variables to refer to the same list, then using the assignment operator (`=`) is correct.
+
+---
+
+## Summary
+
+- `list2 = list1`
+  - No new list is created.
+  - Both variables point to the same list.
+  - Any modification through one variable is visible through the other.
+
+- `list2 = list1.copy()`
+  - A new list is created.
+  - Each variable points to a different list.
+  - Changes to one list do not affect the other.

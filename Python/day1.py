@@ -43,6 +43,45 @@ lt.sort(reverse=True) #returns null
 #and one more thing it only compares the types of list should be same else it gives an error
 print(lt)
 
+lt=[1,2,4,5]
+lt.insert(2,3)
+print(lt)
+######
+lt=[1,2,4,5]
+lt.pop(2)
+print(lt)
+##tuple and list looks similar but the main difference is tuple is 
+tup=(1,2,3,4)
+print(tup)
+print(tup[0],tup[1])
+tup[0]=1 #we cant do this 
+tup=()
+print(type(tup))
+tup=(0)
+print(type(tup))
+tup=(0,)
+print(type(tup))
+tup=(1.22)
+print(type(tup))
+##### so it is aways better to keep " , " at last of a tuple 
+#becoz for single value tuple treats them  as integer var=(1+2)
+
+
+m1=input()
+m2=input()
+m3=input()
+lt=[m1,m2,m3]
+lt.append(lt)
+print(lt)
+lt.append(input())
+lt=[1,2,"sowreesh",4]
+lt2=lt
+lt2.reverse()
+print(lt2)
+if(lt==lt2):
+    print("palindrome")
+else :
+    print("not a palindrome")
 
 
 
